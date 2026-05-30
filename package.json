@@ -9,7 +9,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "node-cron": "^3.0.3",
-    "puppeteer": "^22.10.0",
+    "puppeteer": "latest",
     "sharp": "^0.33.4"
   }
 }

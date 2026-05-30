@@ -90,8 +90,7 @@ async function captureScreenshot() {
       sharpPipeline = sharpPipeline.threshold(128);
       colorPaletteCount = 2;
     } else if (GRAYSCALE_DEPTH === 4) {
-      console.log('Applying posterization filter (4-bit grayscale)...');
-      sharpPipeline = sharpPipeline.posterize(16);
+      console.log('Quantizing image to 4-bit grayscale (16 colors)...');
       colorPaletteCount = 16;
     } else {
       console.log('Applying standard 8-bit grayscale...');
