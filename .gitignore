@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Local environment variables config
+.env
+.env.local
+
+# Build/Runtime outputs
+eink.png
+
+# Operating system files
+.DS_Store
+Thumbs.db

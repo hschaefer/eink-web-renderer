@@ -8,13 +8,13 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - TARGET_URL=https://example.com
-      - CRON_JOB=*/1 * * * *
-      - RENDERING_TIMEOUT=30000
-      - RENDERING_DELAY=1000
-      - RENDERING_SCREEN_HEIGHT=825
-      - RENDERING_SCREEN_WIDTH=1200
-      - GRAYSCALE_DEPTH=8
+      - TARGET_URL=${TARGET_URL:-https://example.com}
+      - CRON_JOB=${CRON_JOB:-*/1 * * * *}
+      - RENDERING_TIMEOUT=${RENDERING_TIMEOUT:-30000}
+      - RENDERING_DELAY=${RENDERING_DELAY:-1000}
+      - RENDERING_SCREEN_HEIGHT=${RENDERING_SCREEN_HEIGHT:-825}
+      - RENDERING_SCREEN_WIDTH=${RENDERING_SCREEN_WIDTH:-1200}
+      - GRAYSCALE_DEPTH=${GRAYSCALE_DEPTH:-8}
     # Use Docker's built-in init process to reap zombie browser processes
     init: true
     # Allocate ample shared memory to prevent Chromium page crashes
