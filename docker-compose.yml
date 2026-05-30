@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  eink-renderer:
+    build: .
+    container_name: eink-web-renderer
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - TARGET_URL=http://192.168.2.126:3000/
+      - CRON_JOB=*/1 * * * *
+      - RENDERING_TIMEOUT=30000
+      - RENDERING_DELAY=1000
+      - RENDERING_SCREEN_HEIGHT=825
+      - RENDERING_SCREEN_WIDTH=1200
+      - GRAYSCALE_DEPTH=8
+    # Use Docker's built-in init process to reap zombie browser processes
+    init: true
+    # Allocate ample shared memory to prevent Chromium page crashes
+    shm_size: "1g"
+    # Provide system administration privileges required for Chromium's sandbox features
+    cap_add:
+      - SYS_ADMIN

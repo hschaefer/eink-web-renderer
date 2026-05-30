@@ -1,0 +1,15 @@
+{
+  "name": "eink-web-renderer",
+  "version": "1.0.0",
+  "description": "Takes regular screenshots of webpages, processes them for e-ink displays, and serves them via HTTP.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3",
+    "puppeteer": "^22.10.0",
+    "sharp": "^0.33.4"
+  }
+}
